@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="col">
+    <p>{{product.id}}</p>
+    <img [src]="product.image" alt="{{product.nom}}" class="card-img">
+    <div class="card-body">
+      <p class="card-text">{{product.nom}}</p>
+      <span>{{product.prixHT}} €</span>
+      <br>
+      <span>{{quantite}}</span>
+      <br>
+      <a class="btn btn-danger m-1" (click)="decrementQuantity()">-</a>
+      <a class="btn btn-success" (click)="incrementQuantity()">+</a>
+    </div>
+    <button class="btn btn-primary" (click)="addToCart(product)">ajouter</button>
+  </div>
+</div>

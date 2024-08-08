@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <h2 class="titre">Panier</h2>
+  <div class="col-md-6">
+    <table class="table">
+      <thead class="headerTable">
+        <tr>
+          <th>N°</th>
+          <th>Nom</th>
+          <th>Quantité</th>
+          <th>Prix</th>
+          <th><span class="glyphicon glyphicon-trash"></span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart; let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{ item.nom }}</td>
+          <td>{{ item.quantite }}</td>
+          <td>{{ item.prixHT }}€</td>
+          <td><a (click)="removeItem(i)">X</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="col-sm-12 col-md-12 col-lg-4 bloc">
+      <div class="col-sm-12 col-md-12 col-lg-10 commande-un">
+        <table class="table">
+          <thead class="headerTable">
+            <tr>
+              <th>Qté</th>
+              <th>Prix HT</th>
+              <th>Prix TCC</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ getTotalQuantity() }}</td>
+              <td>{{ getTotalPrixHT() }}€</td>
+              <td>{{ getTotalPrixTTC() }}€</td>
+              <td></td>
+              <td><button (click)="clearCart()">vider</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
