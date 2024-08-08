@@ -21,7 +21,7 @@
         </tr>
       </tbody>
     </table>
-    <div class="col-sm-12 col-md-12 col-lg-4 bloc">
+    <!-- <div class="col-sm-12 col-md-12 col-lg-4 bloc">
       <div class="col-sm-12 col-md-12 col-lg-10 commande-un">
         <table class="table">
           <thead class="headerTable">
@@ -35,7 +35,7 @@
           <tbody>
             <tr>
               <td>{{ getTotalQuantity() }}</td>
-              <td>{{ getTotalPrixHT() }}€</td>
+              <td>{{ getTotalPrixHT() }} €</td>
               <td>{{ getTotalPrixTTC() }}€</td>
               <td></td>
               <td><button (click)="clearCart()">vider</button></td>
@@ -43,6 +43,37 @@
           </tbody>
         </table>
       </div>
+    </div> -->
+    <div class="container w-100">
+      <div class="row ">
+        <div class="col-lg-4 w-100">
+          <div class="card">
+            <div class="card-body">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col-2">Qté</th>
+                    <th scope="col-3">Prix HT</th>
+                    <th scope="col">Prix TTC</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="col-3">{{ getTotalQuantity() }}</td>
+                    <td scope="col-2">{{ getTotalPrixHT() }} €</td>
+                    <td scope="col-2">{{ getTotalPrixTTC() }} €</td>
+                    <td>
+                      <button class="btn btn-danger" (click)="clearCart()">Vider</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
